@@ -14,17 +14,18 @@ public class BasicThread extends Thread{
 	public static void main(String[] args) {
 		System.out.println("----------------App start-------------");
 		BasicThread b = new BasicThread();
-//		b.setPriority(5);
-		b.start();
+		b.setPriority(5);
 		Thread t = new Thread(new AnotherCreateThread());
-//		t.setPriority(5);
+		t.setPriority(10);
 		t.start();
+		b.start();
+
 		System.out.println("Thread name :"+Thread.currentThread().getName());
 		for (int i=0 ; i <10;i++) {
 			System.out.println("Printer 1 :"+ i);
 		}
 		System.out.println("----------------App finished-------------");
-		t.start();
+//		t.start();
 
 	}
 }
